@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# 🚀 Marc's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This is a work-in-progress playground where I'm learning frontend development and React by building something visually exciting and technically rich—with a little help from AI along the way.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – The core of the app, powering dynamic components and interactivity.
+- **Vite** – Lightning-fast build tool for a smooth development experience.
+- **GSAP** – For slick animations that bring the UI to life.
+- **Lenis** – Smooth scrolling to elevate the user experience.
+- **Three.js (coming soon)** – Planning to integrate 3D elements for extra visual flair.
 
-## Expanding the ESLint configuration
+## 🎯 Goals
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This portfolio isn't just a showcase—it's a creative lab. I'm aiming to:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Highlight my projects with **videos**, **images**, and **interactive previews**
+- Build custom **components** that reflect my style and skills
+- Experiment with **3D visuals**, **scroll effects**, and **micro-interactions**
+- Learn and apply modern frontend techniques in real time
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📦 Features So Far
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Basic layout and routing with React
+- Initial GSAP animations and Lenis scroll setup
+- Component structure for future project sections
+- AI-assisted coding and design decisions
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📚 Learning Journey
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+I'm teaching myself frontend development and React by building this portfolio from scratch. Every commit is a step forward—whether it's fixing a bug, adding a new feature, or experimenting with design.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+Thanks for checking out my portfolio repo! Feel free to explore, fork, or reach out if you have feedback or ideas.

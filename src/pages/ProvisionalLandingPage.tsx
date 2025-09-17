@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { initLenis, onScrollProgress, scrollToSection } from '../animations/lenisSetup'
-import ReactMarkdown from 'react-markdown'
 
 export default function ProvisionalLandingPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -8,8 +7,20 @@ export default function ProvisionalLandingPage() {
   const currentSectionRef = useRef(0)
   const [, forceUpdate] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isScrolling, setIsScrolling] = useState(false)
+  const [, setIsScrolling] = useState(false)
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0)
+
+  // Add this state near your other state declarations
+  const [isHeroActive, setIsHeroActive] = useState(false);
+
+  useEffect(() => {
+    // Trigger hero animation after component mounts
+    const heroTimer = setTimeout(() => {
+      setIsHeroActive(true);
+    }, 200); // Delay to match with the background fade-in
+    
+    return () => clearTimeout(heroTimer);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
@@ -86,8 +97,9 @@ Additional personal and university projects will be added soon, including electr
 ]
 
   useEffect(() => {
-    const lenis = initLenis()
-    
+    // const lenis = initLenis()
+    initLenis();
+
     // Add smooth scroll behavior for wheel events
     const handleWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) > 50) {
@@ -251,10 +263,11 @@ Additional personal and university projects will be added soon, including electr
                   </p>
                   <div 
                     className="w-24 h-1 bg-white bg-opacity-60 mx-auto mt-8 rounded-full transition-all duration-1000 ease-out" 
-                    style={{ 
-                      transform: `scaleX(${isActive ? 1 : 0.5})`,
-                      opacity: isActive ? 1 : 0.5
-                    }} 
+                  style={{ 
+                    transform: `scaleX(${(isActive && isHeroActive) ? 1 : 0.5})`,
+                    opacity: (isActive && isHeroActive) ? 1 : 0.5,
+                    transition: 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease-out'
+                  }} 
                   />
                 </div>
               )}
